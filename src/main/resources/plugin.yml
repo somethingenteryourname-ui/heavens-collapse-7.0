@@ -1,0 +1,18 @@
+name: HeavensCollapse
+version: '1.0.0'
+main: com.heavenscollapse.HeavensCollapsePlugin
+api-version: '1.21'
+author: Claude
+description: Adds the Heaven's Collapse mace with a configurable, lightning-powered one-shot ability.
+
+commands:
+  heavenscollapse:
+    description: Gives the Heaven's Collapse mace to yourself or another player.
+    usage: /<command> [player]
+    permission: heavenscollapse.give
+    permission-message: "&cYou do not have permission to use this command."
+
+permissions:
+  heavenscollapse.give:
+    description: Allows giving the Heaven's Collapse mace via /heavenscollapse.
+    default: op

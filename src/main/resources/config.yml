@@ -1,0 +1,70 @@
+# ==========================================================
+#  Heaven's Collapse - Configuration
+# ==========================================================
+
+# How many successful, consecutive hits on the SAME target it takes to
+# charge the special attack. Every Nth hit is checked; if it doesn't
+# activate (wielder wasn't airborne), the counter still resets and a
+# fresh cycle of N hits begins. Hitting a different target restarts the
+# streak too - the hits must land on one victim, back to back.
+hits-required: 3
+
+# If a player goes this many seconds without landing a hit with the
+# mace, their hit counter resets to 0. This also acts as a safety
+# net if they switch weapons and back. Set to 0 to disable.
+idle-reset-seconds: 30
+
+# If true, switching your held hotbar slot away from Heaven's Collapse
+# (even for a moment - e.g. to equip an elytra, grab rockets, or use a
+# pearl) immediately resets your hit streak. Default false: only the
+# idle timeout above resets the streak, so briefly touching other items
+# between mace swings doesn't throw away progress. Turn this on for a
+# stricter "you must keep the mace selected the whole time" ruleset.
+reset-on-item-switch: false
+
+# Settings for the lightning bolt summoned when the special attack activates.
+lightning:
+  enabled: true
+  # If true, a REAL lightning bolt is struck (can ignite blocks depending on
+  # the "fire" setting below and can damage nearby entities/blocks on its own).
+  # If false, a purely visual/sound lightning effect is used instead
+  # (World#strikeLightningEffect) which never causes damage or fire.
+  damage: false
+  # Only relevant when "damage" is true. If false, any fire started by the
+  # real lightning bolt near the strike point is immediately cleared.
+  fire: false
+
+# Visual/audio flair for the special attack. Turning these off keeps the
+# one-shot mechanic but skips the cinematic presentation (useful for
+# low-end servers or players who prefer minimal effects).
+effects:
+  particles: true
+  sounds: true
+
+# The lightning-based way to obtain Heaven's Collapse.
+# If a player is holding a PLAIN vanilla Mace (main hand or off hand) when
+# they are struck by lightning, that Mace transforms into Heaven's Collapse.
+# See the README for the full explanation of this mechanic.
+lightning-obtain:
+  enabled: true
+  # If true, the damage from the lightning strike that grants the weapon
+  # is cancelled, so the player isn't punished for being blessed.
+  negate-damage: true
+
+# Live feedback shown ONLY to the attacker as an action bar message on
+# every mace hit ("Heaven's Collapse: 2/3"), and on the checked Nth hit,
+# whether it activated or fizzled because the target was on the ground.
+# Handy for verifying the ability is working. Set to false once you're
+# happy with it, for a cleaner in-game feel.
+debug:
+  actionbar: true
+
+# Message strings. '&' color codes are supported. %player% is replaced
+# with a player name where noted.
+messages:
+  no-permission: "&cYou do not have permission to do that."
+  given: "&d&lHeaven's Collapse &5has been placed in your inventory."
+  given-other: "&aGave Heaven's Collapse to &f%player%&a."
+  player-not-found: "&cCould not find an online player named %player%."
+  console-needs-player: "&cConsole must specify a player: /heavenscollapse <player>"
+  received-from-lightning: "&5&lThe heavens have answered... &d&lyour Mace is reborn as Heaven's Collapse!"
