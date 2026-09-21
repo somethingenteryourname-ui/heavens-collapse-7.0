@@ -2,7 +2,7 @@ package com.heavenscollapse.listeners;
 
 import com.heavenscollapse.HeavensCollapseItem;
 import com.heavenscollapse.HeavensCollapsePlugin;
-import org.bukkit.EquipmentSlot;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
